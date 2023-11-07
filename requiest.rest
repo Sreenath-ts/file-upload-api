@@ -1,0 +1,50 @@
+POST http://127.0.0.1:3000/auth/signup HTTP/1.1
+content-type: application/json
+
+{
+    "username":"Kunjappi",
+    "email":"kunjappi@gmail.com",
+    "password":"sreenath",
+    "repassword":"sreenath"
+}
+
+###
+POST http://127.0.0.1:3000/auth/login HTTP/1.1
+content-type: application/json
+
+{
+    "user":"sreenath",
+    "password":"sreenath"
+}
+###
+GET http://127.0.0.1:3000/account/profile/6548e844e14494bcf44d4176 HTTP/1.1
+Authorization:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTQ4ZWE3YzAwMDlkMGNkZTMzZWU4ODciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2OTkyNzc3OTcsImV4cCI6MTcwMTg2OTc5N30.1gAEYFvHGoGN5xmtE_NXVctWYAiEjIdSqOaX_CvWxRk'
+###
+GET http://127.0.0.1:3000/admin/all-users HTTP/1.1
+Authorization:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTQ4ZTg0NGUxNDQ5NGJjZjQ0ZDQxNzYiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5OTI3Nzk4MCwiZXhwIjoxNzAxODY5OTgwfQ.fKePPRADzkkqcwhLVSK61_J2V0yMX9Y2pPgtA1EIUuU'
+
+###
+
+POST http://localhost:3000/files/upload HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTQ4ZTg0NGUxNDQ5NGJjZjQ0ZDQxNzYiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5OTMyODY4OCwiZXhwIjoxNzAxOTIwNjg4fQ.lFseScDzeoMAiGTO_9Ay8c8DuGeR2xbUNXtQapJ0dsc
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="text"
+
+title
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="dummy.pdf"
+Content-Type: document/pdf
+
+
+
+< ./dummy.pdf
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+###
+
+DELETE  http://localhost:3000/files/delete-file/dummy-viz1699331693671.pdf HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTQ4ZTg0NGUxNDQ5NGJjZjQ0ZDQxNzYiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5OTMyODY4OCwiZXhwIjoxNzAxOTIwNjg4fQ.lFseScDzeoMAiGTO_9Ay8c8DuGeR2xbUNXtQapJ0dsc
+###
+GET http://localhost:3000/files/all-files HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTQ4ZTg0NGUxNDQ5NGJjZjQ0ZDQxNzYiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5OTMyODY4OCwiZXhwIjoxNzAxOTIwNjg4fQ.lFseScDzeoMAiGTO_9Ay8c8DuGeR2xbUNXtQapJ0dsc

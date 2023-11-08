@@ -26,7 +26,7 @@ Authorization:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTQ4ZTg0N
 ###
 
 POST http://localhost:3000/files/upload HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTQ4ZTg0NGUxNDQ5NGJjZjQ0ZDQxNzYiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5OTMyODY4OCwiZXhwIjoxNzAxOTIwNjg4fQ.lFseScDzeoMAiGTO_9Ay8c8DuGeR2xbUNXtQapJ0dsc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTRiMzI4Y2RhNThhOGU4NDgwMGQ2M2YiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5OTQyNjk1NiwiZXhwIjoxNzAyMDE4OTU2fQ.Vi26dh1Xf4EhlKS11RGvoo9oz8kYNA2vWZhbK5a86AA
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
@@ -34,8 +34,8 @@ Content-Disposition: form-data; name="text"
 
 title
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="file"; filename="dummy.pdf"
-Content-Type: document/pdf
+Content-Disposition: form-data; name="files"; filename="dummy.pdf"
+Content-Type: application/pdf
 
 
 
@@ -43,8 +43,8 @@ Content-Type: document/pdf
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
 ###
 
-DELETE  http://localhost:3000/files/delete-file/dummy-viz1699331693671.pdf HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTQ4ZTg0NGUxNDQ5NGJjZjQ0ZDQxNzYiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5OTMyODY4OCwiZXhwIjoxNzAxOTIwNjg4fQ.lFseScDzeoMAiGTO_9Ay8c8DuGeR2xbUNXtQapJ0dsc
+DELETE  http://localhost:3000/files/delete-file/1699429203359_978597205.pdf HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTRiMzI4Y2RhNThhOGU4NDgwMGQ2M2YiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5OTQyNjk1NiwiZXhwIjoxNzAyMDE4OTU2fQ.Vi26dh1Xf4EhlKS11RGvoo9oz8kYNA2vWZhbK5a86AA
 ###
 GET http://localhost:3000/files/all-files HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTQ4ZTg0NGUxNDQ5NGJjZjQ0ZDQxNzYiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5OTMyODY4OCwiZXhwIjoxNzAxOTIwNjg4fQ.lFseScDzeoMAiGTO_9Ay8c8DuGeR2xbUNXtQapJ0dsc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTRiMzI4Y2RhNThhOGU4NDgwMGQ2M2YiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5OTQyNjk1NiwiZXhwIjoxNzAyMDE4OTU2fQ.Vi26dh1Xf4EhlKS11RGvoo9oz8kYNA2vWZhbK5a86AA

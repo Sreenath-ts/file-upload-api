@@ -13,8 +13,8 @@ POST http://127.0.0.1:3000/auth/login HTTP/1.1
 content-type: application/json
 
 {
-    "user":"sreenath",
-    "password":"sreenath"
+    "user":"adminhere",
+    "password":"adminpass"
 }
 ###
 GET http://127.0.0.1:3000/account/profile/6548e844e14494bcf44d4176 HTTP/1.1

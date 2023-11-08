@@ -15,20 +15,21 @@ module.exports = {
         }
     },
     verify:(req,res,next)=>{
+      let apiRes = {
+        status:401,
+        message:'Login required!',
+        authorization:false,
+        data:{}
+    }
       try{
-        let apiRes = {
-          status:401,
-          message:'Login required!',
-          authorization:false,
-          data:{}
-      }
+       
       let jwtSecret = process.env.JWT_ACCESS_SECRET_TOKEN;
-      const cookieToken = req.cookies.token ?? req.headers.authorization.split(' ')[1];
+      let cookieToken =  req.headers.authorization;
       if (!cookieToken) {
           apiRes.message = 'Missing authorization token, please login now!'
         return res.status(200).json(apiRes);
       }
-    
+      cookieToken = cookieToken.split(' ')[1]
       try {
         const decoded = jwt.verify(cookieToken, jwtSecret);
         res.locals.jwtUSER = decoded;
@@ -44,8 +45,9 @@ module.exports = {
       }
 
       }catch(e){
+        console.log(e);
         apiRes.message = 'Something went wrong, please try again later!'
-        return res.status(200).json(response)
+        return res.status(200).json(apiRes)
       }
       
   },

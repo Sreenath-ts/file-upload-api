@@ -49,7 +49,9 @@ exports.listFiles = async(req,res)=>{
   try {
    const command = new ListObjectsV2Command({Bucket:process.env.AWS_BUCKET})
     const response = await s3.send(command)
-    const data = response.Contents.map(item => item.Key)
+    console.log(response);
+   ;
+    const data = response.Contents.map(item =>  `https://${process.env.AWS_BUCKET}.s3.amazonaws.com/${item.Key}`)
     res.json({message:"data fetched successfully",data})
   } catch (error) {
     res.status(404).json({message:"Resources not found"})
